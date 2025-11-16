@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aperture Science Portal Gun Initiative</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: white;
+    }
+
+    /* Intro */
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: #ff9300; /* orange CRT-style */
+      text-align: center;
+      opacity: 1;
+      transition: opacity 2s ease;
+    }
+    #intro img {
+      width: 200px;
+      margin-bottom: 20px;
+      animation: pulse 1.5s infinite;
+    }
+    #intro-text {
+      font-size: 24px;
+      letter-spacing: 1px;
+      white-space: pre-wrap;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #ff9300;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+
+    /* Welcome rectangle */
+    #welcome-top {
+      width: 90%;
+      margin: 40px auto;
+      padding: 40px;
+      background: #111;
+      border: 3px solid #1a73e8;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+    #welcome-top img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    #welcome-top h1 {
+      color: #1a73e8;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+    #welcome-top p {
+      color: white;
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Panels */
+    .panel-container {
+      display: flex;
+      width: 80%;
+      margin: 50px auto;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .text-box {
+      flex: 1;
+      border: 3px solid #1a73e8;
+      background: #111;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    }
+    .text-box h2 { color: #1a73e8; margin-bottom: 15px; }
+    .text-box ul { padding-left: 20px; }
+    .text-box li { margin-bottom: 8px; }
+    .text-box p { color: white; font-size: 16px; line-height: 1.5; }
+
+    .image-box {
+      flex: 1;
+      border: 3px solid #ff9300;
+      background: #111;
+      padding: 15px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    }
+    .image-box img { max-width: 100%; height: auto; }
+
+    footer {
+      text-align: center;
+      padding: 50px 0;
+      color: #aaa;
+      font-size: 14px;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Intro -->
+<div id="intro">
+  <img src="https://ih1.redbubble.net/image.591882781.7918/flat,1000x1000,075,f.u4.jpg" alt="Aperture Science Logo">
+  <h2 id="intro-text"></h2><span class="cursor"></span>
+</div>
+
+<script>
+  const text = "Initializing Aperture Science Portal Gun Initiative...";
+  const introText = document.getElementById('intro-text');
+  let index = 0;
+  function typeWriter() {
+    if (index < text.length) {
+      introText.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 50);
+    } else {
+      setTimeout(() => {
+        const intro = document.getElementById('intro');
+        intro.style.opacity = 0;
+        setTimeout(() => { intro.style.display = 'none'; }, 2000);
+      }, 1000);
+    }
+  }
+  window.addEventListener('load', typeWriter);
+</script>
+
+<!-- Welcome rectangle -->
+<div id="welcome-top">
+  <img src="https://ih1.redbubble.net/image.591882781.7918/flat,1000x1000,075,f.u4.jpg" alt="Aperture Science Logo">
+  <h1>Welcome Test Subject</h1>
+  <p>Welcome to Aperture Science Laboratories’ Portal Gun Initiative. Explore advanced spatial displacement technology in fully controlled chambers. Adhere to all safety protocols.</p>
+  <p>All participants must follow strict guidelines to prevent injury or unintended temporal displacement.</p>
+</div>
+
+<!-- Existing Panels -->
+<div class="panel-container">
+  <div class="text-box">
+    <h2>Portal Gun Technology</h2>
+    <ul>
+      <li>Creates two linked portals: blue and orange</li>
+      <li>Instantaneous travel between portals</li>
+      <li>Requires training for safe operation</li>
+      <li>Used to navigate Aperture test chambers</li>
+    </ul>
+  </div>
+  <div class="image-box">
+    <img src="https://www.pikpng.com/pngl/b/49-495050_portal-gun-png-portal-2-portal-gun-png.png" alt="Portal Gun">
+  </div>
+</div>
+
+<div class="panel-container">
+  <div class="image-box">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.3n5mBt-gM6VsfFJbZM_A8wAAAA?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Companion Cube">
+  </div>
+  <div class="text-box">
+    <h2>Weighted Companion Cube</h2>
+    <ul>
+      <li>Accompanies test subjects during certain sequences</li>
+      <li>Not sentient but provides psychological support</li>
+      <li>Handle with care</li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel-container">
+  <div class="text-box">
+    <h2>Test Chamber Portals</h2>
+    <ul>
+      <li>Portal-conductive surfaces only</li>
+      <li>Gravity and physics manipulation zones</li>
+      <li>Observation windows for monitoring</li>
+      <li>Compliance with safety protocols is mandatory</li>
+    </ul>
+  </div>
+  <div class="image-box">
+    <img src="https://th.bing.com/th/id/OIP.Bg8cNdr49S9fQ0CcqgxbOgAAAA?w=206&h=200&c=8&rs=1&o=6&cb=ucfimg1&pid=23.1&ucfimg=1" alt="Portals">
+  </div>
+</div>
+
+<div class="panel-container">
+  <div class="image-box">
+    <img src="https://th.bing.com/th/id/R.cd6251dfec03967e22d9946a1ec8a791?rik=WzsEKhyThZ%2fBTA&riu=http%3a%2f%2fi0.kym-cdn.com%2fphotos%2fimages%2foriginal%2f000%2f034%2f053%2fThe_cake_is_a_lie.jpg&ehk=wqNVPqr9tc6Gd2qSrFKhD9yuI3BT2AS1Oc0ht47Fhic%3d&risl=&pid=ImgRaw&r=0" alt="Cake">
+  </div>
+  <div class="text-box">
+    <h2>The Cake</h2>
+    <p>Remember: The cake is a lie. Some test chambers may promise rewards, but compliance is always mandatory.</p>
+  </div>
+</div>
+
+<!-- New Panels -->
+<div class="panel-container">
+  <div class="text-box">
+    <h2>Aperture Science Sentry Turrets</h2>
+    <ul>
+      <li>Autonomous defense units deployed in test chambers.</li>
+      <li>Polite voice lines to maintain test subject calm.</li>
+      <li>Self-deactivating when knocked over or destroyed.</li>
+      <li>Used to monitor and ensure compliance with chamber rules.</li>
+    </ul>
+  </div>
+  <div class="image-box">
+    <img src="https://www.nicepng.com/png/detail/338-3387969_download-zip-archive-turret-portal-sprite.png" alt="Turret">
+  </div>
+</div>
+
+<div class="panel-container">
+  <div class="image-box">
+    <img src="https://preview.redd.it/8iuk2pqcnh081.png?width=1080&crop=smart&auto=webp&s=16b74d3757d55edd8cae753fc1157b2db12969bc" alt="GLaDOS Personality Core">
+  </div>
+  <div class="text-box">
+    <h2>Aperture Science Personality Core</h2>
+    <ul>
+      <li>Artificial intelligence modules controlling various test functions.</li>
+      <li>Some cores oversee test subjects, others handle operational tasks.</li>
+      <li>Highly advanced, capable of dialogue, humor, and sarcasm.</li>
+      <li>Ensures test subjects follow proper protocols and safety measures.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel-container">
+  <div class="text-box">
+    <h2>Fizzle Maintenance Fields</h2>
+    <ul>
+      <li>Energy barriers used to control portal access.</li>
+      <li>Can disintegrate objects entering unauthorized zones.</li>
+      <li>Critical for spatial testing safety and experiment integrity.</li>
+      <li>Subjects must not bypass or interfere with fizzler operation.</li>
+    </ul>
+  </div>
+  <div class="image-box">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.VWPQB0GB-B1mlRpxcj0v7wHaEK?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Fizzle Field">
+  </div>
+</div>
+
+<footer>
+  © 2025 Aperture Science Laboratories. All rights reserved. Testing may involve spatial or temporal anomalies.
+</footer>
+
+</body>
+</html>
